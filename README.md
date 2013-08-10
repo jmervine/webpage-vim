@@ -28,7 +28,8 @@ Download `vim.min.js`:
 Add the following to your page:
 
     <head>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- jQuery's CDN provided by MaxCDN - http://www.maxcdn.com/ -->
+        <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
 
         <!-- OPTIONAL:
              To enable '/' search selector, uncomment this script tag and
