@@ -1,0 +1,52 @@
+var searchName;
+try { searchName = searchElement; } catch(e) {}
+
+function goY(val) {
+    if(ready){
+        ready=false;
+        $("html, body").animate({ scrollTop: val}, 200);
+        setTimeout(function(){ ready=true; },100);
+    }
+}
+
+function goX(val) {
+    if(ready){
+        ready=false;
+        $("html, body").animate({ scrollLeft: val}, 200);
+        setTimeout(function(){ ready=true; },100);
+    }
+}
+
+function search() {
+    if (typeof searchName!=='undefined') {
+        if (searchName) {
+            setTimeout(function() { $(searchName).focus(); }, 250);
+        }
+    }
+}
+var ready=true,
+    g=0,
+    vim = {
+        106: function(){ goY($(window).scrollTop()+100); },
+        107: function(){ goY($(window).scrollTop()-100); },
+        104: function(){ goX($(window).scrollLeft()-100); },
+        108: function(){ goX($(window).scrollLeft()+100); },
+         71: function(){ goY($('html').height()); },
+         70: function(){ goY($(window).scrollTop()+$(window).height());},
+         66: function(){ goY($(window).scrollTop()-$(window).height());},
+         85: function(){ goY($(window).scrollTop()-($(window).height()/2));},
+         68: function(){ goY($(window).scrollTop()+($(window).height()/2));},
+         47: function(){ search(); },
+        103: function(){ if (g===1) {
+            g=0;
+            goY(0);
+        } else { g=1;
+            setTimeout(function(){g=0;},1000);
+        }
+    }};
+
+$(window).load(function(){
+    $(window).keypress(function(event){
+        if (vim[event.keyCode]){ vim[event.keyCode](); }
+    });
+});
