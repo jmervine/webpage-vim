@@ -20,9 +20,9 @@ Supported keybinds:
 
 > #### Search support:
 > To activate search support, add the following anywhere in your `<head>` block.
->
->    <script>var searchElement = '[jQuery Element Path]';</script>
->
+
+    <script>var searchElement = '[jQuery Element Path]';</script>
+
 > See jQuery docs for finding Element Path.
 
 ## Extending
