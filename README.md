@@ -32,14 +32,13 @@ Simply update the `vim` object with a new key code and it's handler.
 Example:
 
     function doSomethingNew() {
-        if(ready) {
-            // new action
-        }
+        ensureReady(function() {
+            /* new action */
+        });
     }
-    // where 999 is your event.keyCode
+
+    /* where 999 is your event.keyCode */
     vim[999] = function() { doSomethingNew(); };
 
-> Note: `ready` is a simple timeout to avoid overloading the client should the key press be held down.
-
-** Ideally though, you should fork this and send me a pull request. **
+##### Ideally though, you should fork this and send me a pull request.
 
