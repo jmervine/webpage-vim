@@ -18,12 +18,28 @@ Supported keybinds:
 * `gg`: page top
 * `/`: focus search box (if implemented)
 
-> #### Search support:
-> To activate search support, add the following anywhere in your `<head>` block.
+## Installing
 
-    <script>var searchElement = '[jQuery Element Path]';</script>
+Download `vim.min.js`:
 
-> See jQuery docs for finding Element Path.
+    cd /path/to/your/js/files
+    wget https://raw.github.com/jmervine/webpage-vim/master/vim.min.js
+
+Add the following to your page:
+
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <!-- OPTIONAL:
+             To enable '/' search selector, uncomment this script tag and
+             update the value with your search box selector.
+             See jQuery docs on how to find the correct value. -->
+        <!--
+        <script>var searchElement = '[jQuery Element Path]';</script>
+        -->
+
+        <script src="/path/to/your/js/files/vim.min.js"></script>
+    </head>
 
 ## Extending
 
