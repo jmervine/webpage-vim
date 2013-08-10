@@ -1,27 +1,31 @@
 var searchName;
 try { searchName = searchElement; } catch(e) {}
 
-function goY(val) {
-    if(ready){
-        ready=false;
-        $("html, body").animate({ scrollTop: val}, 200);
+function ensureReady(callback) {
+    if (ready) {
+        ready = false;
+        callback();
         setTimeout(function(){ ready=true; },100);
     }
 }
 
+function goY(val) {
+    ensureReady(function() {
+        $("html, body").animate({ scrollTop: val}, 200);
+    });
+}
+
 function goX(val) {
-    if(ready){
-        ready=false;
+    ensureReady(function() {
         $("html, body").animate({ scrollLeft: val}, 200);
-        setTimeout(function(){ ready=true; },100);
-    }
+    });
 }
 
 function search() {
     if (typeof searchName!=='undefined') {
-        if (searchName) {
+        ensureReady(function() {
             setTimeout(function() { $(searchName).focus(); }, 250);
-        }
+        });
     }
 }
 
