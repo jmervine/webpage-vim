@@ -2,10 +2,9 @@
 
 Simple jQuery based browser lib for adding a few vim'ish key bindings to any web page.
 
+> Currently beta, but included on http://mervine.net
+
 Supported keybinds:
-
-
-var searchElement = 'form#searchform input#searchbox';
 
 * `j`: down
 * `k`: up
