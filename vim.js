@@ -24,6 +24,14 @@ function search() {
         }
     }
 }
+
+function somethingFocused() {
+    if ($(document.activeElement).is(':input[type=text],:input[type=password],option,textarea')) {
+        return true;
+    }
+    return false;
+}
+
 var ready=true,
     g=0,
     vim = {
@@ -47,6 +55,7 @@ var ready=true,
 
 $(window).load(function(){
     $(window).keypress(function(event){
-        if (vim[event.keyCode]){ vim[event.keyCode](); }
+        if (vim[event.keyCode] && !somethingFocused()){ vim[event.keyCode](); }
     });
 });
+
