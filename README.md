@@ -20,11 +20,6 @@ Supported keybinds:
 
 ## Installing
 
-Download `vim.min.js`:
-
-    cd /path/to/your/js/files
-    wget https://raw.github.com/jmervine/webpage-vim/master/vim.min.js
-
 Add the following to your page:
 
     <head>
@@ -39,7 +34,9 @@ Add the following to your page:
         <script>var searchElement = '[jQuery Element Path]';</script>
         -->
 
-        <script src="/path/to/your/js/files/vim.min.js"></script>
+        <!-- CDN provided jsDelivr - http://jsDelivr.net
+              a big thanks to them for providing this for me! -->
+        <script src="//cdn.jsdelivr.net/jquery.webpage-vim/0.1/vim.min.js"></script>
     </head>
 
 ## Extending
