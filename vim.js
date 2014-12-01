@@ -59,7 +59,7 @@ var ready=true,
 
 $(window).load(function(){
     $(window).keypress(function(event){
-        if (vim[event.keyCode] && !somethingFocused()){ vim[event.keyCode](); }
+        if (vim[event.charCode] && !somethingFocused()){ vim[event.charCode](); }
     });
 });
 
